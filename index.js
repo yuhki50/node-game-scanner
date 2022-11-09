@@ -11,12 +11,20 @@ if (process.arch === 'x64') {
         throw new Error(`platform (${process.platform}) not supported`);
     }
 } else if (process.arch === 'arm64') {
+    /*
     if (process.platform === 'win32') {
         module.exports = require("./native/windows-arm64.node");
     } else if (process.platform === 'darwin') {
         module.exports = require("./native/darwin-arm64.node");
     } else if (process.platform === 'linux') {
         module.exports = require("./native/linux-arm64.node");
+    } else {
+        throw new Error(`platform (${process.platform}) not supported`);
+    }
+    */
+
+    if (process.platform === 'darwin') {
+        module.exports = require("./native/darwin-arm64.node");
     } else {
         throw new Error(`platform (${process.platform}) not supported`);
     }
