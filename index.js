@@ -5,8 +5,10 @@ if (process.arch === 'x64') {
         module.exports = require("./native/windows-x64.node");
     } else if (process.platform === 'darwin') {
         module.exports = require("./native/darwin-x64.node");
+    /*
     } else if (process.platform === 'linux') {
         module.exports = require("./native/linux-x64.node");
+    */
     } else {
         throw new Error(`platform (${process.platform}) not supported`);
     }
